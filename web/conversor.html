@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script  type="text/javascript" >
+           
+    function redondear(num){
+        
+        var final=0;
+        num=num.toString();
+        console.log(num);
+        var pos =num.indexOf(".");
+        console.log("la posicion "+ pos);
+        var res1=num.substring(0, pos+1);
+        var res = num.substring(pos+1);
+        console.log("lo primero es "+res1  + "el resto es "+ res);
+        res=parseFloat(res);
+        if(res>=25){
+         final=res1+5;   
+        }
+        if(res<25){
+          final=res1+"0";  
+        }
+        if(res<=75 && res >=25){
+            final=res1+5;
+        }
+        if(res>75){
+            final=parseFloat(res1)+1+.0;
+        }
+        if(pos===-1){
+         
+        return num;   
+        }else{
+        final=parseFloat(final);
+        return final;
+       }
+    }
+      var mirar =aBinario(20).nume;
+      var kk= mirar.substr(0,2)+"-"+1+"-"+ mirar.substr(3,4);
+      console.log(kk);   
+      
+     function aBinario(num){
+         num=num.toString();
+        var final=0;       
+        var pos =num.indexOf(".");
+        var res1=num.substring(0, pos);
+        var res = num.substring(pos+1);
+
+        if(pos===-1){ 
+            final=num.toString(2);
+            var tamaño=final.length;
+            if(tamaño===1){
+                final= "0000" + final;
+            }else if(tamaño===2){
+                final= "000" + final; 
+            }else if(tamaño===3){
+               final= "00" + final;  
+            }else if(tamaño===4){
+               final= "0" + final;  
+            }         
+            
+        return{nume: final, residu:0};   
+        }else{
+            final=parseFloat(res1).toString(2);
+            var final2=1;
+            final=parseFloat(final);
+            var tamaño=final.length;
+            if(tamaño===1){
+                final= "0000" + final;
+            }else if(tamaño===2){
+                final= "000" + final; 
+            }else if(tamaño===3){
+               final= "00" + final;  
+            }else if(tamaño===4){
+               final= "0" + final;  
+            }         
+        return {nume:final, residu:final2};
+       }     
+        
+ };
+        </script> 
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

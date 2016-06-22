@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Algoritmo Genetico</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+        <link href="bower_components/vis/dist/vis.css" rel="stylesheet" type="text/css" />
+        <script src="bower_components/vis/dist/vis.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script  type="text/javascript" src="dijkstras.js" ></script> 
+        <script  type="text/javascript" src="procesos.js" ></script> 
+  
+    </head>
+    <body>
+   
+    
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Algoritmo Genético</div>
+          <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">  
+                        <div id="grafico" style="width: 900px; height: 900px"></div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">Controles</div>  
+                            <div class="panel-body">
+                                <h3>Viajar</h3><br>
+                                <table>
+                                    <tr>
+                                        <td>Origen:<select class="form-control" id="origen"></select></td>
+                                        <td>Destino:<select class="form-control" id="destino"></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-default" onclick="viajar()">Ir</button></td>
+                                    </tr>
+                                </table><hr>
+                                <div id="ruta" ></div>
+                                <h3>Ciudades</h3><br>
+                                <table>
+                                    <tr>
+                                        <td>Id:<input id="id_nodo" type="number" ></td>
+                                        <td>Nombre:<input id="nombre"  type="text" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-default" onclick="agregar()">Add</button>
+                                        <button class="btn-default" onclick="eliminar()">Eliminar</button>
+                                        <button class="btn-default" onclick="modificar()">Modi</button></td>
+                                    </tr>
+                                </table>
+                                <hr>
+                                
+                                
+                                <h3>Caminos</h3><br>
+                                <table>
+                                    <tr>
+                                        <td>Id:<br><input id="id_camino" type="number" style="width:90px" ></td>
+                                        <td>Desde:<input id="desde" value="0"   type="number" style="width:90px" ></td>
+                                        <td>Hasta:<br><input id="hasta" value="0"  type="number" style="width:90px" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distancia<input id="distancia" value="0" type="number" style="width:90px" ></td>
+                                        <td>Tiempo<input id="tiempo" value="0"  type="number" style="width:90px" ></td>
+                                        <td>Peajes<br><input id="peajes" value=0  type="number" style="width:90px" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estado Via<input id="estadoVia" value="0" max="2" type="number" style="width:90px" ></td>
+                                        <td>Tipo Via<input id="tipoVia" value="0"  type="text" style="width:90px" ></td>
+                                        <td>Condicion de la Via<input value="0" id="condicionesVia"  type="text" style="width:90px" ></td>
+                                    </tr> 
+                                    <tr>
+                                        <td>Seguridad<input id="seguridad" value="0"  type="text" style="width:90px" ></td> 
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><button class="btn-default" onclick="agregarCamino()">Add</button>
+                                                 <button class="btn-default" onclick="eliminarCamino()">Eliminar</button>
+                                             <button class="btn-default" onclick="modificarCamino()">Modi</button></td>   
+                                    </tr>
+                                </table>    
+                                <hr>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                    <div class="panel panel-default">    
+                        <div class="panel-heading">Proceso se Cruze</div>
+                        <div class="panel-body"></div>
+                        <div id="vista"></div>
+                        </div>
+                    </div>    
+                  <div class="col-md-4"></div>
+                </div>              
+                
+           </div>
+        </div>
+       
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="procesos.js" ></script>
+  
+</body>
+</html>
+
